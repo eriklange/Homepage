@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:homepage/about_me/about_me.dart';
+import 'package:homepage/home/home.dart';
 import 'package:homepage/navigation_bar/navigation_bar.dart';
 
 typedef void NavigationBarItemCallback(Widget target);
@@ -23,7 +23,7 @@ class _AppContentState extends State<AppContent> {
   @override
   void initState() {
     super.initState();
-    _visibleWidget = AboutMe(
+    _visibleWidget = Home(
       navigationBarItemCallback: _onNavigationBarItemTap,
     );
   }
@@ -31,11 +31,14 @@ class _AppContentState extends State<AppContent> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        NavigationBar(onItemTap: _onNavigationBarItemTap),
-        _visibleWidget,
-      ],
-    ));
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            NavigationBar(onItemTap: _onNavigationBarItemTap),
+            _visibleWidget,
+          ],
+        ),
+      ),
+    );
   }
 }

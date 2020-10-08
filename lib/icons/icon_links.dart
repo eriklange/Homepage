@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:homepage/links.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:homepage/utils/url_helper.dart';
 
 class IconLinks {
   static const github =
@@ -22,15 +22,7 @@ class _IconLinkButton extends StatelessWidget {
     Key key,
   })  : assert(icon != null && url != null),
         super(key: key);
-
-  void _launchUrl() async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
-
+        
   @override
   Widget build(BuildContext context) {
     return IconButton(
@@ -38,7 +30,7 @@ class _IconLinkButton extends StatelessWidget {
       icon: Icon(
         icon,
       ),
-      onPressed: _launchUrl,
+      onPressed: () => UrlHelper.launchUrl(url),
     );
   }
 }

@@ -13,7 +13,7 @@ class NavigationBarItem extends StatelessWidget {
       onPressed: onTap,
       child: Text(
         title,
-        style: TextStyle(fontSize: 18),
+        style: Theme.of(context).appBarTheme.textTheme.button,
       ),
     );
   }

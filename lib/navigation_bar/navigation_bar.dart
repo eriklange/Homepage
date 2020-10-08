@@ -13,11 +13,16 @@ class NavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20),
-      child: ScreenTypeLayout(
-        mobile: NavigationBarMobile(onItemTap: onItemTap),
-        tablet: NavigationBarTabletDesktop(onItemTap: onItemTap),
+    return Container(
+      color: Theme.of(context).appBarTheme.color,
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: 20,
+        ),
+        child: ScreenTypeLayout(
+          mobile: NavigationBarMobile(onItemTap: onItemTap),
+          tablet: NavigationBarTabletDesktop(onItemTap: onItemTap),
+        ),
       ),
     );
   }

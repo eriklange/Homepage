@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:homepage/about_me/about_me.dart';
+import 'package:homepage/home/home.dart';
 import 'package:homepage/app_content.dart';
 import 'package:homepage/navigation_bar/navigation_bar_item.dart';
 
@@ -10,7 +10,6 @@ class NavigationBarTabletDesktop extends StatelessWidget {
       : assert(onItemTap != null),
         super(key: key);
 
-  @override
   Widget build(BuildContext context) {
     return Container(
       height: 80,
@@ -29,7 +28,7 @@ class NavigationBarTabletDesktop extends StatelessWidget {
               ),
               NavigationBarItem(
                 onTap: () => onItemTap(
-                  AboutMe(
+                  Home(
                     navigationBarItemCallback: onItemTap,
                   ),
                 ),
