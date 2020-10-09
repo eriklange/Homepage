@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:homepage/app_theme.dart';
+import 'package:homepage/home/home.dart';
+import 'package:homepage/home/sections/projects/old_timer_view.dart';
+import 'package:homepage/project_views/fudge_view.dart';
 
 import 'app_content.dart';
 
@@ -12,54 +16,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Erik',
-      theme: ThemeData(
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        appBarTheme: AppBarTheme(
-          color: Colors.white,
-          textTheme: TextTheme(
-            button: TextStyle(
-              fontSize: 18,
-              color: Colors.black,
-            ),
-          ),
-        ),
-        textTheme: TextTheme(
-          headline1: TextStyle(
-            fontSize: 50,
-            color: Colors.black,
-            fontWeight: FontWeight.w400,
-          ),
-          
-          headline2: TextStyle(
-            fontSize: 40,
-            color: Colors.black,
-          ),
-          
-          headline3: TextStyle(
-            fontSize: 30,
-            color: Colors.black,
-          ),
-
-          
-          subtitle1: TextStyle(
-            fontSize: 18,
-            color: Colors.black,
-          ),
-
-          bodyText1: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.normal,
-            color: Colors.black,
-          ),
-          bodyText2: TextStyle(
-            fontSize: 25,
-            color: Colors.black,
-          ),
-
-
-        ),
-      ),
-      home: AppContent(),
+      theme: AppTheme.theme,
+      initialRoute: Home.route,
+      routes: {
+        Home.route: (context) => AppContent(body: Home()),
+        FudgeView.route: (context) => AppContent(body: FudgeView()),
+        OldTimerView.route: (context) => AppContent(body: OldTimerView()),
+      },
     );
   }
 }

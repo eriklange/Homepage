@@ -48,18 +48,21 @@ class ProjectTileFooter extends StatelessWidget {
       width: width,
       child: Container(
         color: Colors.white,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              flex: 8,
-              child: _getFooterText(context),
-            ),
-            Expanded(
-              flex: 2,
-              child: icon,
-            ),
-          ],
+        child: Padding(
+          padding: EdgeInsets.all(15),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                flex: 8,
+                child: _getFooterText(context),
+              ),
+              Expanded(
+                flex: 2,
+                child: icon,
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:homepage/home/sections/projects/project_tile_footer.dart';
 import 'package:homepage/home/sections/section_shadow.dart';
-import 'package:homepage/home/sections/welcome/projects/project_tile_footer.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class ProjectTile extends StatefulWidget {
   final AssetImage image;
   final String title;
   final String summary;
+  final VoidCallback onTap;
 
   const ProjectTile({
     @required this.image,
     @required this.title,
     @required this.summary,
+    @required this.onTap,
     Key key,
   }) : super(key: key);
 
@@ -57,7 +59,7 @@ class _ProjectTileState extends State<ProjectTile>
     final imageSize = MediaQuery.of(context).size.width * ratio;
 
     return InkWell(
-      onTap: () {},
+      onTap: widget.onTap,
       onHover: _onHoverToggle,
       child: ScaleTransition(
         scale: _animation,
@@ -71,11 +73,12 @@ class _ProjectTileState extends State<ProjectTile>
             children: [
               _getImage(imageSize),
               ProjectTileFooter(
-                  width: imageSize,
-                  title: widget.title,
-                  summary: widget.summary,
-                  animationDuration: _animationDuration,
-                  opacity: _opacity),
+                width: imageSize,
+                title: widget.title,
+                summary: widget.summary,
+                animationDuration: _animationDuration,
+                opacity: _opacity,
+              ),
             ],
           ),
         ),

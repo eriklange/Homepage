@@ -35,6 +35,9 @@ class Welcome extends StatelessWidget {
 
     if (isTablet) {
       children.add(
+        Padding(padding: padding),
+      );
+      children.add(
         _RowChild(
           boxConstraints: constraints,
           child: ProfilePicture(

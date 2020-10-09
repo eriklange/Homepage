@@ -1,35 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:homepage/home/home.dart';
-import 'package:homepage/app_content.dart';
+import 'package:homepage/home/home_button.dart';
 import 'package:homepage/navigation_bar/navigation_bar_item.dart';
 
 class NavigationBarTabletDesktop extends StatelessWidget {
-  final NavigationBarItemCallback onItemTap;
-
-  const NavigationBarTabletDesktop({@required this.onItemTap, Key key})
-      : assert(onItemTap != null),
-        super(key: key);
+  const NavigationBarTabletDesktop({Key key}) : super(key: key);
 
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
+        HomeButton(),
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             NavigationBarItem(
-              onTap: () => onItemTap(Container()),
+              onTap: () {},
               title: "Projects",
             ),
             SizedBox(
               width: 60,
             ),
             NavigationBarItem(
-              onTap: () => onItemTap(
-                Home(
-                  navigationBarItemCallback: onItemTap,
-                ),
-              ),
+              onTap: () => Navigator.of(context).pushNamed(Home.route),
               title: "About Me",
             ),
           ],

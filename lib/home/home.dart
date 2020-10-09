@@ -3,18 +3,15 @@ import 'package:homepage/home/sections/projects/projects.dart';
 import 'package:homepage/home/sections/section_template.dart';
 import 'package:homepage/home/my_color_scheme.dart';
 import 'package:homepage/home/sections/welcome/welcome.dart';
-import 'package:homepage/app_content.dart';
 
 class Home extends StatelessWidget {
-  final NavigationBarItemCallback navigationBarItemCallback;
+  static const String route = "/home";
+
   final MyColorScheme colorScheme = MyColorScheme();
 
-  Home({@required this.navigationBarItemCallback, Key key}) : super(key: key);
-
-  final List<Widget> sections = [
-    Welcome(),
-    Projects(),
-  ];
+  Home({
+    Key key,
+  }) : super(key: key);
 
   _getSection(Widget child) {
     return SectionTemplate(
@@ -23,7 +20,14 @@ class Home extends StatelessWidget {
     );
   }
 
-  _getSections() => sections.map(_getSection).toList().cast<Widget>();
+  _getSections() {
+    List<Widget> sections = [
+      Welcome(),
+      Projects(),
+    ];
+
+    return sections.map(_getSection).toList().cast<Widget>();
+  }
 
   @override
   Widget build(BuildContext context) {

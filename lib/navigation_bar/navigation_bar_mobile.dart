@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:homepage/app_content.dart';
+import 'package:homepage/home/home_button.dart';
 
 class NavigationBarMobile extends StatelessWidget {
-  final NavigationBarItemCallback onItemTap;
-
-  const NavigationBarMobile({@required this.onItemTap, Key key})
-      : assert(onItemTap != null),
-        super(key: key);
+  const NavigationBarMobile({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +10,7 @@ class NavigationBarMobile extends StatelessWidget {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
+        HomeButton(),
         IconButton(
           icon: Icon(Icons.menu),
           onPressed: () {},
