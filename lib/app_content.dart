@@ -31,13 +31,18 @@ class _AppContentState extends State<AppContent> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            NavigationBar(onItemTap: _onNavigationBarItemTap),
-            _visibleWidget,
-          ],
-        ),
+      body: Column(
+        children: [
+          NavigationBar(onItemTap: _onNavigationBarItemTap),
+          Expanded(
+            child: ListView(
+              shrinkWrap: true,
+              children: [
+                _visibleWidget,
+              ]
+            ),
+          ),
+        ],
       ),
     );
   }

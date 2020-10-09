@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:homepage/links.dart';
@@ -35,16 +36,17 @@ class WelcomeText extends StatelessWidget {
         Padding(
           padding: padding,
         ),
-        Container(
-          color: Colors.yellow,
-          child: RichText(
-            text: TextSpan(
+        Expanded(
+          child: AutoSizeText.rich(
+            TextSpan(
               text: body,
               style: bodyTheme,
               children: [
                 TextSpan(
                   text: sopraSteria,
-                  style: bodyTheme,
+                  style: bodyTheme.copyWith(
+                    decoration: TextDecoration.underline,
+                  ),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () => UrlHelper.launchUrl(Links.sopraSteria),
                 ),
@@ -54,7 +56,6 @@ class WelcomeText extends StatelessWidget {
                 ),
               ],
             ),
-            maxLines: 4,
           ),
         ),
       ],

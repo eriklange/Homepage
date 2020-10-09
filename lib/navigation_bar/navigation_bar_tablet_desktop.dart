@@ -11,33 +11,30 @@ class NavigationBarTabletDesktop extends StatelessWidget {
         super(key: key);
 
   Widget build(BuildContext context) {
-    return Container(
-      height: 80,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              NavigationBarItem(
-                onTap: () => onItemTap(Container()),
-                title: "Projects",
-              ),
-              SizedBox(
-                width: 60,
-              ),
-              NavigationBarItem(
-                onTap: () => onItemTap(
-                  Home(
-                    navigationBarItemCallback: onItemTap,
-                  ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            NavigationBarItem(
+              onTap: () => onItemTap(Container()),
+              title: "Projects",
+            ),
+            SizedBox(
+              width: 60,
+            ),
+            NavigationBarItem(
+              onTap: () => onItemTap(
+                Home(
+                  navigationBarItemCallback: onItemTap,
                 ),
-                title: "About Me",
               ),
-            ],
-          )
-        ],
-      ),
+              title: "About Me",
+            ),
+          ],
+        )
+      ],
     );
   }
 }

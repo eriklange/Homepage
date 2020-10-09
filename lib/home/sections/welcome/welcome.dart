@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:homepage/home/sections/welcome/welcome_text.dart';
 import 'package:homepage/icons/icon_row.dart';
 import 'package:homepage/home/sections/welcome/profile_picture.dart';
+import 'package:homepage/utils/constants.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class Welcome extends StatelessWidget {
@@ -9,42 +10,33 @@ class Welcome extends StatelessWidget {
 
   const Welcome({Key key}) : super(key: key);
 
-  List<Widget> _getRowChildren(bool isTablet) {
+  List<Widget> _getRowChildren(bool isTablet, BoxConstraints constraints) {
     final List<Widget> children = [
-      Expanded(
-        child: LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints constraints) {
-            print(constraints.maxHeight);
-            return Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: constraints.maxWidth / 10,
-              ),
-              child: ConstrainedBox(
-                constraints:
-                    BoxConstraints(maxHeight: constraints.maxHeight / 1.5),
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: WelcomeText(
-                        padding: padding,
-                      ),
-                    ),
-                    Padding(
-                      padding: padding,
-                    ),
-                    IconRow(),
-                  ],
+      _RowChild(
+        boxConstraints: constraints,
+        child: ConstrainedBox(
+          constraints: BoxConstraints(maxHeight: constraints.maxHeight / 1.5),
+          child: Column(
+            children: [
+              Expanded(
+                child: WelcomeText(
+                  padding: padding,
                 ),
               ),
-            );
-          },
+              Padding(
+                padding: padding,
+              ),
+              IconRow(),
+            ],
+          ),
         ),
       ),
     ];
 
     if (isTablet) {
       children.add(
-        Expanded(
+        _RowChild(
+          boxConstraints: constraints,
           child: ProfilePicture(
             maxHeight: 600,
           ),
@@ -56,20 +48,45 @@ class Welcome extends StatelessWidget {
   }
 
   Widget _getRow(bool isTablet) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: _getRowChildren(isTablet),
+    return LayoutBuilder(
+      builder: (_, BoxConstraints constraints) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: _getRowChildren(isTablet, constraints),
+        );
+      },
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.grey,
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        maxHeight: Constants.contentWidth / 2.5,
+        maxWidth: Constants.contentWidth,
+      ),
       child: ScreenTypeLayout(
         tablet: _getRow(true),
         mobile: _getRow(false),
       ),
+    );
+  }
+}
+
+class _RowChild extends StatelessWidget {
+  final Widget child;
+  final BoxConstraints boxConstraints;
+
+  const _RowChild({
+    @required this.child,
+    @required this.boxConstraints,
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: child,
     );
   }
 }
