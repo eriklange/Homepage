@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:homepage/home/sections/projects/projects.dart';
 import 'package:homepage/home/sections/section_template.dart';
 import 'package:homepage/home/my_color_scheme.dart';
 import 'package:homepage/home/sections/welcome/welcome.dart';
-import 'package:homepage/home/sections/projects.dart';
 import 'package:homepage/app_content.dart';
 
 class Home extends StatelessWidget {
@@ -11,7 +11,10 @@ class Home extends StatelessWidget {
 
   Home({@required this.navigationBarItemCallback, Key key}) : super(key: key);
 
-  final List<Widget> sections = [Welcome(), Projects()];
+  final List<Widget> sections = [
+    Welcome(),
+    Projects(),
+  ];
 
   _getSection(Widget child) {
     return SectionTemplate(
