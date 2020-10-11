@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:homepage/widgets/section/section.dart';
 import 'package:homepage/widgets/sectioned_view.dart';
 
-class OldTimerView extends SectionedView {
-  static const String route = "oldTimer";
-
-  OldTimerView({Key key}) : super(key: key);
+class OldTimer extends SectionedView {
+  static const String route = "/oldTimer";
 
   @override
   List<Section> get sections => [_OldTimerAbout()];

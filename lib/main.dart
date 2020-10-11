@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:homepage/app_theme.dart';
 import 'package:homepage/routes/fudge/fudge.dart';
 import 'package:homepage/routes/home/home.dart';
-import 'package:homepage/routes/home/sections/projects/old_timer_view.dart';
+import 'package:homepage/routes/home/sections/projects/old_timer.dart';
 
 import 'app_content.dart';
 
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       routes: {
         Home.route: (context) => AppContent(sectionedView: Home()),
         Fudge.route: (context) => AppContent(sectionedView: Fudge()),
-        OldTimerView.route: (context) => AppContent(sectionedView: OldTimerView()),
+        OldTimer.route: (context) => AppContent(sectionedView: OldTimer()),
       },
     );
   }

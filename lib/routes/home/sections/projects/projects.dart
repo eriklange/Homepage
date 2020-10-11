@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:homepage/routes/fudge/fudge.dart';
-import 'package:homepage/routes/home/sections/projects/old_timer_view.dart';
+import 'package:homepage/routes/home/sections/projects/old_timer.dart';
 import 'package:homepage/routes/home/sections/projects/project_tile.dart';
 import 'package:homepage/widgets/section/section.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -24,7 +24,7 @@ class Projects extends Section {
         image: AssetImage('assets/images/old_timer_icon.jpg'),
         title: "Old Timer",
         summary: "A next of kin planner app",
-        onTap: () => _pushRoute(context, OldTimerView.route),
+        onTap: () => _pushRoute(context, OldTimer.route),
       ),
     ];
   }

@@ -3,10 +3,8 @@ import 'package:homepage/widgets/my_color_scheme.dart';
 import 'package:homepage/widgets/section/section.dart';
 import 'package:homepage/widgets/section/section_template.dart';
 
-abstract class SectionedView extends StatelessWidget {
+abstract class SectionedView {
   final MyColorScheme _colorScheme = MyColorScheme();
-
-  SectionedView({Key key}) : super(key: key);
 
   Widget _getSection(Section section) {
     return SectionTemplate(
@@ -15,7 +13,9 @@ abstract class SectionedView extends StatelessWidget {
     );
   }
 
-  List<Widget> _getSections() {
+  List<Section> get sections;
+
+  List<Widget> build() {
     return sections
         .map(
           _getSection,
@@ -24,12 +24,10 @@ abstract class SectionedView extends StatelessWidget {
         .cast<Widget>();
   }
 
-  List<Section> get sections;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: _getSections(),
-    );
-  }
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Column(
+  //     children: _getSections(),
+  //   );
+  // }
 }
