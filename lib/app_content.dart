@@ -13,9 +13,12 @@ class AppContent extends StatelessWidget {
         children: [
           NavigationBar(),
           Expanded(
-            child: ListView(shrinkWrap: true, children: [
-              body,
-            ]),
+            child: ListView(
+              shrinkWrap: true,
+              children: [
+                body,
+              ],
+            ),
           ),
         ],
       ),

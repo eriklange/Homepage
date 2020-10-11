@@ -4,12 +4,10 @@ import 'package:flutter_icons/flutter_icons.dart';
 
 class ProjectTileFooter extends StatelessWidget {
   final String title, summary;
-  final double width;
   final Duration animationDuration;
   final double opacity;
 
   const ProjectTileFooter({
-    @required this.width,
     @required this.title,
     @required this.summary,
     @required this.animationDuration,
@@ -27,6 +25,7 @@ class ProjectTileFooter extends StatelessWidget {
 
   Widget _getFooterText(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
@@ -44,25 +43,22 @@ class ProjectTileFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: width,
-      child: Container(
-        color: Colors.white,
-        child: Padding(
-          padding: EdgeInsets.all(15),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                flex: 8,
-                child: _getFooterText(context),
-              ),
-              Expanded(
-                flex: 2,
-                child: icon,
-              ),
-            ],
-          ),
+    return Container(
+      color: Colors.white,
+      child: Padding(
+        padding: EdgeInsets.all(15),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              flex: 8,
+              child: _getFooterText(context),
+            ),
+            Expanded(
+              flex: 2,
+              child: icon,
+            ),
+          ],
         ),
       ),
     );

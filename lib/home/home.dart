@@ -20,7 +20,7 @@ class Home extends StatelessWidget {
     );
   }
 
-  _getSections() {
+  List<Widget> get sections {
     List<Widget> sections = [
       Welcome(),
       Projects(),
@@ -32,7 +32,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: _getSections(),
+      children: sections,
     );
   }
 }

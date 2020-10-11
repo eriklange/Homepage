@@ -27,9 +27,10 @@ class AppTheme {
       headline3: TextStyle(
         fontSize: 30,
         color: Colors.black,
+        fontWeight: FontWeight.bold,
       ),
       subtitle1: TextStyle(
-        fontSize: 18,
+        fontSize: 25,
         color: Colors.black,
       ),
       bodyText1: TextStyle(

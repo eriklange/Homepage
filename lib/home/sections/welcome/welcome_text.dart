@@ -15,7 +15,7 @@ class WelcomeText extends StatelessWidget {
   String get title => "Hi, I'm Erik!";
 
   String get body =>
-      "I'm a software developer from Oslo, Norway, currently studying towards a Master's in Informatics at the University of Oslo. Afterwards, I will begin working at ";
+      "I'm a software developer from Oslo, Norway, currently studying towards a Master's degree in Informatics at the University of Oslo. Afterwards, I will begin working at ";
 
   String get sopraSteria => "Sopra Steria";
 

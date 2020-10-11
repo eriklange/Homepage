@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:homepage/home/sections/projects/project_tile_footer.dart';
 import 'package:homepage/home/sections/section_shadow.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 class ProjectTile extends StatefulWidget {
   final AssetImage image;
   final String title;
   final String summary;
+  final double width;
   final VoidCallback onTap;
 
   const ProjectTile({
     @required this.image,
     @required this.title,
     @required this.summary,
+    @required this.width,
     @required this.onTap,
     Key key,
   }) : super(key: key);
@@ -30,17 +31,32 @@ class _ProjectTileState extends State<ProjectTile>
   AnimationController _controller;
   Animation<double> _animation;
 
-  Widget _getImage(double size) {
-    return SizedBox(
-      height: size,
-      width: size,
-      child: Image(
-        image: widget.image,
-      ),
+  double _opacity = 0.0;
+
+  double get width => widget.width;
+
+  BoxDecoration get decoration {
+    return BoxDecoration(
+      boxShadow: [
+        SectionShadow(shadowOpacity: _opacity),
+      ],
     );
   }
 
-  double _opacity = 0.0;
+  Widget get image {
+    return Image(
+      image: widget.image,
+    );
+  }
+
+  Widget get footer {
+    return ProjectTileFooter(
+      title: widget.title,
+      summary: widget.summary,
+      animationDuration: _animationDuration,
+      opacity: _opacity,
+    );
+  }
 
   void _onHoverToggle(bool hover) {
     setState(() {
@@ -52,38 +68,6 @@ class _ProjectTileState extends State<ProjectTile>
     } else {
       _controller.reverse();
     }
-  }
-
-  Widget _getContent(BuildContext context, bool smallScreen) {
-    final ratio = smallScreen ? 0.9 : 0.4;
-    final imageSize = MediaQuery.of(context).size.width * ratio;
-
-    return InkWell(
-      onTap: widget.onTap,
-      onHover: _onHoverToggle,
-      child: ScaleTransition(
-        scale: _animation,
-        child: AnimatedContainer(
-          duration: _animationDuration,
-          decoration: BoxDecoration(boxShadow: [
-            SectionShadow(shadowOpacity: _opacity),
-          ]),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _getImage(imageSize),
-              ProjectTileFooter(
-                width: imageSize,
-                title: widget.title,
-                summary: widget.summary,
-                animationDuration: _animationDuration,
-                opacity: _opacity,
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
   }
 
   @override
@@ -109,9 +93,23 @@ class _ProjectTileState extends State<ProjectTile>
 
   @override
   Widget build(BuildContext context) {
-    return ScreenTypeLayout(
-      mobile: _getContent(context, true),
-      desktop: _getContent(context, false),
+    return InkWell(
+      onTap: widget.onTap,
+      onHover: _onHoverToggle,
+      child: ScaleTransition(
+        scale: _animation,
+        child: AnimatedContainer(
+          duration: _animationDuration,
+          decoration: decoration,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              image,
+              footer,
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
