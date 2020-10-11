@@ -22,7 +22,7 @@ class OldTimer extends SectionedView {
                       "Old Timer is an app currently under development by a friend of mine and myself. It is not of top priority, as I am currently studying fulltime.",
                 ),
                 ParagraphContent(
-                  subtitle: "Making loved one's days easier",
+                  subtitle: "Making a loved one's days easier",
                   body:
                       "The idea of the app is to function as a planner tool for one or more next of kin of a relative / friend who needs more assistance than normal.",
                 ),
@@ -45,7 +45,7 @@ class OldTimer extends SectionedView {
                 ParagraphContent(
                   subtitle: "Fun Learning",
                   body:
-                      "One of my hobbies is to develop apps, which makes this fun for me. I do",
+                      "One of my hobbies is to develop apps, which makes this fun for me. I also wish to expand my knowledge, and developing apps is a perfect way of doing so",
                 ),
                 ParagraphContent(
                   subtitle: "Pair Programming",
