@@ -6,14 +6,12 @@ class ProjectTile extends StatefulWidget {
   final AssetImage image;
   final String title;
   final String summary;
-  final double width;
   final VoidCallback onTap;
 
   const ProjectTile({
     @required this.image,
     @required this.title,
     @required this.summary,
-    @required this.width,
     @required this.onTap,
     Key key,
   }) : super(key: key);
@@ -25,15 +23,13 @@ class ProjectTile extends StatefulWidget {
 class _ProjectTileState extends State<ProjectTile>
     with TickerProviderStateMixin {
   static const Duration _animationDuration = Duration(milliseconds: 200);
-  static const double _scaleLower = 0.9;
+  static const double _scaleLower = 0.95;
   static const double _scaleUpper = 1.0;
 
   AnimationController _controller;
   Animation<double> _animation;
 
   double _opacity = 0.0;
-
-  double get width => widget.width;
 
   BoxDecoration get decoration {
     return BoxDecoration(

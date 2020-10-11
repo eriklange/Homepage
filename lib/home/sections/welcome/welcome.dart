@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:homepage/home/sections/section.dart';
 import 'package:homepage/home/sections/welcome/welcome_text.dart';
 import 'package:homepage/icons/icon_row.dart';
 import 'package:homepage/home/sections/welcome/profile_picture.dart';
 import 'package:homepage/utils/constants.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-class Welcome extends StatelessWidget {
+class Welcome extends Section {
   static const padding = EdgeInsets.symmetric(vertical: 15);
+
+  @override
+  get title => null;
 
   const Welcome({Key key}) : super(key: key);
 
