@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:homepage/navigation_bar/navigation_bar.dart';
+import 'package:homepage/widgets/sectioned_view.dart';
 
 class AppContent extends StatelessWidget {
-  final Widget body;
+  final SectionedView sectionedView;
 
-  AppContent({@required this.body, Key key}) : super(key: key);
+  AppContent({@required this.sectionedView, Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
-          NavigationBar(),
+          NavigationBar(
+            sections: sectionedView.sections,
+          ),
           Expanded(
             child: ListView(
               shrinkWrap: true,
               children: [
-                body,
+                sectionedView,
               ],
             ),
           ),

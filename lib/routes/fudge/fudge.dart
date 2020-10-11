@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:homepage/widgets/routed_page.dart';
 import 'package:homepage/widgets/section/section.dart';
+import 'package:homepage/widgets/sectioned_view.dart';
 
 class Fudge extends SectionedView {
   static const String route = "/fudge";

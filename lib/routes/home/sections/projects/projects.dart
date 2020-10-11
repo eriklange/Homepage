@@ -6,10 +6,7 @@ import 'package:homepage/widgets/section/section.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class Projects extends Section {
-  const Projects({Key key}) : super(key: key);
-
-  @override
-  get title => "Projects";
+  Projects({Key key}) : super(title: "Projects", key: key);
 
   void _pushRoute(BuildContext context, String route) {
     Navigator.of(context).pushNamed(route);

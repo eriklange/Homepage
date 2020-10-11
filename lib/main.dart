@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.theme,
       initialRoute: Home.route,
       routes: {
-        Home.route: (context) => AppContent(body: Home()),
-        Fudge.route: (context) => AppContent(body: Fudge()),
-        OldTimerView.route: (context) => AppContent(body: OldTimerView()),
+        Home.route: (context) => AppContent(sectionedView: Home()),
+        Fudge.route: (context) => AppContent(sectionedView: Fudge()),
+        OldTimerView.route: (context) => AppContent(sectionedView: OldTimerView()),
       },
     );
   }

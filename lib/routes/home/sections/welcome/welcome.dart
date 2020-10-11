@@ -8,11 +8,7 @@ import 'package:responsive_builder/responsive_builder.dart';
 
 class Welcome extends Section {
   static const padding = EdgeInsets.symmetric(vertical: 15);
-
-  @override
-  get title => null;
-
-  const Welcome({Key key}) : super(key: key);
+  Welcome({Key key}) : super(title: "Welcome", displayTitle: false, key: key);
 
   List<Widget> _getRowChildren(bool isTablet, BoxConstraints constraints) {
     final List<Widget> children = [

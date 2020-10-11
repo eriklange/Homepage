@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:homepage/navigation_bar/navigation_bar_mobile.dart';
 import 'package:homepage/navigation_bar/navigation_bar_tablet_desktop.dart';
 import 'package:homepage/utils/constants.dart';
+import 'package:homepage/widgets/section/section.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class NavigationBar extends StatelessWidget {
-  const NavigationBar({Key key}) : super(key: key);
+  final List<Section> sections;
 
-  Radius get borderRadius => Radius.circular(40);
+  const NavigationBar({
+    @required this.sections,
+    Key key,
+  })  : assert(sections != null),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +24,14 @@ class NavigationBar extends StatelessWidget {
         child: SizedBox(
           height: Constants.navigationBarHeight,
           child: ScreenTypeLayout(
-            mobile: NavigationBarMobile(),
-            tablet: NavigationBarTabletDesktop(),
+            mobile: NavigationBarContent(
+              sections: sections,
+              mobile: true,
+            ),
+            tablet: NavigationBarContent(
+              sections: sections,
+              mobile: false,
+            ),
           ),
         ),
       ),

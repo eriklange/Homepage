@@ -21,7 +21,7 @@ class SectionTemplate extends StatelessWidget {
       section,
     ];
 
-    if (title != null) {
+    if (section.displayTitle) {
       children.insert(0, SectionHeader(title: title));
     }
 
