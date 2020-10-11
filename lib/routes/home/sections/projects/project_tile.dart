@@ -3,7 +3,7 @@ import 'package:homepage/routes/home/sections/projects/project_tile_footer.dart'
 import 'package:homepage/widgets/shadow_overlay.dart';
 
 class ProjectTile extends StatefulWidget {
-  final AssetImage image;
+  final Image image;
   final String title;
   final String summary;
   final Color footerColor;
@@ -38,12 +38,6 @@ class _ProjectTileState extends State<ProjectTile>
       boxShadow: [
         ShadowOverlay(shadowOpacity: _opacity),
       ],
-    );
-  }
-
-  Widget get image {
-    return Image(
-      image: widget.image,
     );
   }
 
@@ -103,7 +97,7 @@ class _ProjectTileState extends State<ProjectTile>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              image,
+              widget.image,
               footer,
             ],
           ),

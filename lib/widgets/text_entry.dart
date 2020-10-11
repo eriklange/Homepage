@@ -41,7 +41,9 @@ class TextEntry extends StatelessWidget {
     );
   }
 
-  Widget _getContent(BuildContext context) {
+  List<Widget> _getContent(BuildContext context) {
+    final content = [_getTitle(context)];
+
     final paragraphWidgets = paragraphs
         .map(
           _getParagraph,
@@ -49,9 +51,9 @@ class TextEntry extends StatelessWidget {
         .toList()
         .cast<Widget>();
 
-    return Column(
-      children: paragraphWidgets,
-    );
+    content.addAll(paragraphWidgets);
+
+    return content;
   }
 
   @override
@@ -60,10 +62,7 @@ class TextEntry extends StatelessWidget {
       padding: contentPadding,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _getTitle(context),
-          _getContent(context),
-        ],
+        children: _getContent(context),
       ),
     );
   }

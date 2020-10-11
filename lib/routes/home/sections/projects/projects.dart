@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:homepage/routes/fudge/fudge.dart';
 import 'package:homepage/routes/home/sections/projects/old_timer.dart';
 import 'package:homepage/routes/home/sections/projects/project_tile.dart';
+import 'package:homepage/utils/asset_helper.dart';
 import 'package:homepage/widgets/section/section.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -15,15 +16,15 @@ class Projects extends Section {
   List<Widget> _getTiles(BuildContext context, bool smallScreen) {
     return [
       ProjectTile(
-        image: AssetImage('assets/images/fudge_icon.png'),
+        image: AssetHelper.fudgeIcon,
         title: "Fudge",
         summary: "A drinking game app",
         onTap: () => _pushRoute(context, Fudge.route),
       ),
       ProjectTile(
-        image: AssetImage('assets/images/old_timer_icon.jpg'),
+        image: AssetHelper.oldTimerIcon,
         title: "Old Timer",
-        summary: "A next of kin planner app",
+        summary: "A planner app for next of kin",
         onTap: () => _pushRoute(context, OldTimer.route),
       ),
     ];

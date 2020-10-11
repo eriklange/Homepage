@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:homepage/utils/asset_helper.dart';
 
 class ProfilePicture extends StatelessWidget {
   final double maxHeight;
@@ -18,9 +19,7 @@ class ProfilePicture extends StatelessWidget {
             radius: double.infinity,
             backgroundColor: Colors.transparent,
             child: ClipOval(
-              child: Image(
-                image: AssetImage('assets/images/profile_picture.jpg'),
-              ),
+              child: AssetHelper.erikPicture,
             ),
           ),
         );
