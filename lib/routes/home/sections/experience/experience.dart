@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:homepage/home/sections/section.dart';
-import 'package:homepage/ui_widgets/text_entry.dart';
+import 'package:homepage/routes/home/sections/templates/section.dart';
+import 'package:homepage/widgets/text_entry.dart';
 
 class Experience extends Section {
   @override

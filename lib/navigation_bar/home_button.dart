@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:homepage/home/home.dart';
+import 'package:homepage/routes/home/home.dart';
 
 class HomeButton extends StatelessWidget {
   const HomeButton({Key key}) : super(key: key);

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class SectionShadow extends BoxShadow {
+class ShadowOverlay extends BoxShadow {
   final double shadowOpacity;
   final double spreadRadius;
   final double blurRadius;
   final Offset offset;
 
-  SectionShadow({
+  ShadowOverlay({
     this.shadowOpacity = 0.5,
     this.spreadRadius = 5,
     this.blurRadius = 10,

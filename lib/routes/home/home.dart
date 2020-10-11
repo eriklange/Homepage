@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:homepage/home/sections/experience.dart';
-import 'package:homepage/home/sections/projects/projects.dart';
-import 'package:homepage/home/sections/section.dart';
-import 'package:homepage/home/sections/section_template.dart';
-import 'package:homepage/home/my_color_scheme.dart';
-import 'package:homepage/home/sections/welcome/welcome.dart';
+import 'package:homepage/routes/home/sections/experience/experience.dart';
+import 'package:homepage/routes/home/sections/projects/projects.dart';
+import 'package:homepage/routes/home/sections/templates/section.dart';
+import 'package:homepage/routes/home/sections/templates/section_template.dart';
+import 'package:homepage/routes/home/sections/welcome/welcome.dart';
+import 'package:homepage/widgets/my_color_scheme.dart';
 
 class Home extends StatelessWidget {
   static const String route = "/home";
 
   final MyColorScheme colorScheme = MyColorScheme();
 
-  Home({
-    Key key,
-  }) : super(key: key);
+  Home({Key key}) : super(key: key);
 
   _getSection(Section child) {
     return SectionTemplate(

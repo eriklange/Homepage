@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:homepage/links.dart';
+import 'package:homepage/utils/links.dart';
 import 'package:homepage/utils/url_helper.dart';
 
 class WelcomeText extends StatelessWidget {

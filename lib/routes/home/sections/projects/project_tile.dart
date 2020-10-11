@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:homepage/home/sections/projects/project_tile_footer.dart';
-import 'package:homepage/home/sections/section_shadow.dart';
+import 'package:homepage/routes/home/sections/projects/project_tile_footer.dart';
+import 'package:homepage/widgets/shadow_overlay.dart';
 
 class ProjectTile extends StatefulWidget {
   final AssetImage image;
@@ -34,7 +34,7 @@ class _ProjectTileState extends State<ProjectTile>
   BoxDecoration get decoration {
     return BoxDecoration(
       boxShadow: [
-        SectionShadow(shadowOpacity: _opacity),
+        ShadowOverlay(shadowOpacity: _opacity),
       ],
     );
   }

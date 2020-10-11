@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:homepage/home/sections/section_header.dart';
 import 'package:homepage/utils/constants.dart';
+
+import 'section_header.dart';
 
 class SectionTemplate extends StatelessWidget {
   final Color color;

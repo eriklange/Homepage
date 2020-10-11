@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:homepage/icons/icon_links.dart';
+import 'package:homepage/utils/icon_links.dart';
 
-class IconRow extends StatelessWidget {
-  const IconRow({Key key}) : super(key: key);
+class SocialIconRow extends StatelessWidget {
+  const SocialIconRow({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

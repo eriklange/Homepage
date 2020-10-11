@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:homepage/links.dart';
+import 'package:homepage/utils/links.dart';
 import 'package:homepage/utils/url_helper.dart';
 
 class IconLinks {

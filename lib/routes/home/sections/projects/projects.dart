@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:homepage/home/sections/projects/old_timer_view.dart';
-import 'package:homepage/home/sections/projects/project_tile.dart';
-import 'package:homepage/home/sections/section.dart';
-import 'package:homepage/project_views/fudge_view.dart';
+import 'package:homepage/routes/fudge/fudge.dart';
+import 'package:homepage/routes/home/sections/projects/old_timer_view.dart';
+import 'package:homepage/routes/home/sections/projects/project_tile.dart';
+import 'package:homepage/routes/home/sections/templates/section.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class Projects extends Section {
@@ -21,7 +21,7 @@ class Projects extends Section {
         image: AssetImage('assets/images/fudge_icon.png'),
         title: "Fudge",
         summary: "A drinking game app",
-        onTap: () => _pushRoute(context, FudgeView.route),
+        onTap: () => _pushRoute(context, Fudge.route),
       ),
       ProjectTile(
         image: AssetImage('assets/images/old_timer_icon.jpg'),

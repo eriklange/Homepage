@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:homepage/home/home_button.dart';
+import 'package:homepage/navigation_bar/home_button.dart';
 
 class NavigationBarMobile extends StatelessWidget {
   const NavigationBarMobile({Key key}) : super(key: key);
