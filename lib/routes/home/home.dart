@@ -1,40 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:homepage/routes/home/sections/experience/experience.dart';
 import 'package:homepage/routes/home/sections/projects/projects.dart';
-import 'package:homepage/routes/home/sections/templates/section.dart';
-import 'package:homepage/routes/home/sections/templates/section_template.dart';
 import 'package:homepage/routes/home/sections/welcome/welcome.dart';
-import 'package:homepage/widgets/my_color_scheme.dart';
+import 'package:homepage/widgets/routed_page.dart';
+import 'package:homepage/widgets/section/section.dart';
 
-class Home extends StatelessWidget {
-  static const String route = "/home";
-
-  final MyColorScheme colorScheme = MyColorScheme();
+class Home extends SectionedView {
+  static String route = "/home";
 
   Home({Key key}) : super(key: key);
 
-  _getSection(Section child) {
-    return SectionTemplate(
-      color: colorScheme.color,
-      child: child,
-      title: child.title,
-    );
-  }
-
-  List<Widget> get sections {
-    List<Section> sections = [
-      Experience(),
-      Welcome(),
-      Projects(),
-    ];
-
-    return sections.map(_getSection).toList().cast<Widget>();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: sections,
-    );
-  }
+  List<Section> get sections => [
+        Welcome(),
+        Projects(),
+        Experience(),
+      ];
 }

@@ -6,6 +6,7 @@ class ProjectTile extends StatefulWidget {
   final AssetImage image;
   final String title;
   final String summary;
+  final Color footerColor;
   final VoidCallback onTap;
 
   const ProjectTile({
@@ -13,6 +14,7 @@ class ProjectTile extends StatefulWidget {
     @required this.title,
     @required this.summary,
     @required this.onTap,
+    this.footerColor = Colors.white,
     Key key,
   }) : super(key: key);
 
@@ -51,6 +53,7 @@ class _ProjectTileState extends State<ProjectTile>
       summary: widget.summary,
       animationDuration: _animationDuration,
       opacity: _opacity,
+      color: widget.footerColor,
     );
   }
 

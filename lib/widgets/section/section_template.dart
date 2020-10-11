@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:homepage/utils/constants.dart';
+import 'package:homepage/widgets/section/section.dart';
 
 import 'section_header.dart';
 
 class SectionTemplate extends StatelessWidget {
   final Color color;
-  final Widget child;
-  final String title;
-
+  final Section section;
   const SectionTemplate({
     @required this.color,
-    @required this.child,
-    this.title,
+    @required this.section,
     Key key,
   }) : super(key: key);
+
+  String get title => section.title;
 
   Widget get content {
     final children = [
       SizedBox(height: 20),
-      child,
+      section,
     ];
 
     if (title != null) {

@@ -6,12 +6,14 @@ class ProjectTileFooter extends StatelessWidget {
   final String title, summary;
   final Duration animationDuration;
   final double opacity;
+  final Color color;
 
   const ProjectTileFooter({
     @required this.title,
     @required this.summary,
     @required this.animationDuration,
     @required this.opacity,
+    @required this.color,
     Key key,
   }) : super(key: key);
 
@@ -44,7 +46,7 @@ class ProjectTileFooter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: color,
       child: Padding(
         padding: EdgeInsets.all(15),
         child: Row(

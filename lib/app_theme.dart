@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:homepage/widgets/my_color_scheme.dart';
 
 class AppTheme {
   static get headline1 => TextStyle(
@@ -45,11 +46,12 @@ class AppTheme {
     fontFamily: GoogleFonts.openSansCondensed().fontFamily,
     visualDensity: VisualDensity.adaptivePlatformDensity,
     appBarTheme: AppBarTheme(
-      color: Colors.white,
+      color: MyColorScheme.colors[1],
       textTheme: TextTheme(
         button: TextStyle(
-          fontSize: 18,
+          fontSize: 20,
           color: Colors.black,
+          fontWeight: FontWeight.bold,
         ),
       ),
     ),
