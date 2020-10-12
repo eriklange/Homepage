@@ -47,18 +47,6 @@ class NavigationDrawer extends StatelessWidget {
         },
       );
 
-      // final tile = Padding(
-      //     padding: EdgeInsets.only(top: 15),
-      //     child: ListTile(
-      //       title: Center(
-      //         child: Text(section.title),
-      //       ),
-      //       onTap: () {
-      //         Navigator.of(context).pop();
-      //         ScrollAssist.scrollTo(itemScrollController, i);
-      //       },
-      //     ));
-
       listTiles.add(tile);
     }
 
