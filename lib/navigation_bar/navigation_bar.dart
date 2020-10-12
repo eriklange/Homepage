@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:homepage/navigation_bar/navigation_bar_content.dart';
 import 'package:homepage/utils/constants.dart';
 import 'package:homepage/widgets/section/section.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-class NavigationBar extends StatelessWidget {
+class NavigationBar extends StatelessWidget with PreferredSizeWidget {
   final List<Section> sections;
   final ItemScrollController itemScrollController;
+  @override
+  Size get preferredSize => Size(0, 90);
 
   const NavigationBar({
     @required this.sections,
@@ -26,17 +27,9 @@ class NavigationBar extends StatelessWidget {
         ),
         child: SizedBox(
           height: Constants.navigationBarHeight,
-          child: ScreenTypeLayout(
-            mobile: NavigationBarContent(
-              sections: sections,
-              itemScrollController: itemScrollController,
-              mobile: true,
-            ),
-            tablet: NavigationBarContent(
-              sections: sections,
-              itemScrollController: itemScrollController,
-              mobile: false,
-            ),
+          child: NavigationBarContent(
+            sections: sections,
+            itemScrollController: itemScrollController,
           ),
         ),
       ),

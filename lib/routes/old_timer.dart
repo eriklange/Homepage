@@ -6,7 +6,7 @@ import 'package:homepage/widgets/sectioned_view.dart';
 import 'package:homepage/widgets/text_entry.dart';
 
 class OldTimer extends SectionedView {
-  static const String route = "/oldTimer";
+  static const String route = "oldTimer";
 
   @override
   List<Section> get sections => [

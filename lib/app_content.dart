@@ -3,29 +3,35 @@ import 'package:homepage/navigation_bar/navigation_bar.dart';
 import 'package:homepage/widgets/sectioned_view.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-class AppContent extends StatelessWidget {
+import 'navigation_bar/navigation_drawer.dart';
+
+class AppContent extends StatefulWidget {
   final SectionedView sectionedView;
 
   AppContent({@required this.sectionedView, Key key}) : super(key: key);
 
   @override
+  _AppContentState createState() => _AppContentState();
+}
+
+class _AppContentState extends State<AppContent> {
+  SectionedView get sectionedView => widget.sectionedView;
+  @override
   Widget build(BuildContext context) {
     final itemScrollController = ItemScrollController();
 
     return Scaffold(
-      body: Column(
-        children: [
-          NavigationBar(
-            sections: sectionedView.sections,
-            itemScrollController: itemScrollController,
-          ),
-          Expanded(
-            child: _ScrollableList(
-              sectionedView: sectionedView,
-              itemScrollController: itemScrollController,
-            ),
-          ),
-        ],
+      appBar: NavigationBar(
+        sections: sectionedView.sections,
+        itemScrollController: itemScrollController,
+      ),
+      body: _ScrollableList(
+        sectionedView: sectionedView,
+        itemScrollController: itemScrollController,
+      ),
+      endDrawer: NavigationDrawer(
+        sections: sectionedView.sections,
+        itemScrollController: itemScrollController,
       ),
     );
   }

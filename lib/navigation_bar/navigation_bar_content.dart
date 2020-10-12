@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:homepage/navigation_bar/home_button.dart';
 import 'package:homepage/navigation_bar/navigation_bar_item.dart';
+import 'package:homepage/utils/scroll_assist.dart';
 import 'package:homepage/widgets/section/section.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class NavigationBarContent extends StatelessWidget {
   final List<Section> sections;
-  final bool mobile;
   final ItemScrollController itemScrollController;
 
   const NavigationBarContent({
     @required this.sections,
-    @required this.mobile,
     @required this.itemScrollController,
     Key key,
   })  : assert(sections != null),
@@ -21,15 +21,12 @@ class NavigationBarContent extends StatelessWidget {
 
   Widget _getBarItem(Section section, int index) {
     return NavigationBarItem(
-      onTap: () => itemScrollController.scrollTo(
-          index: index,
-          duration: Duration(milliseconds: 500),
-          curve: Curves.linearToEaseOut),
+      onTap: () => ScrollAssist.scrollTo(itemScrollController, index),
       title: section.title,
     );
   }
 
-  Widget _getChildren(BuildContext context) {
+  Widget _getSections() {
     final List<Widget> children = [];
 
     for (var i = 0; i < sections.length; i++) {
@@ -44,20 +41,30 @@ class NavigationBarContent extends StatelessWidget {
     );
   }
 
-  Widget _getDropdownMenu() {
+  Widget _getDropdownMenu(BuildContext context) {
     return IconButton(
       icon: Icon(Icons.menu),
-      onPressed: () {},
+      onPressed: Scaffold.of(context).openEndDrawer,
+    );
+  }
+
+  Widget _getContent(BuildContext context, bool mobile) {
+    final List<Widget> children = [HomeButton()];
+
+    final additionalChild = mobile ? _getDropdownMenu(context) : _getSections();
+
+    children.add(additionalChild);
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: children,
     );
   }
 
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        HomeButton(),
-        mobile ? _getDropdownMenu() : _getChildren(context),
-      ],
+    return ScreenTypeLayout(
+      mobile: _getContent(context, true),
+      desktop: _getContent(context, false),
     );
   }
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:homepage/app_theme.dart';
 import 'package:homepage/routes/fudge/fudge.dart';
 import 'package:homepage/routes/home/home.dart';
-import 'package:homepage/routes/home/sections/projects/old_timer.dart';
+import 'package:homepage/routes/old_timer.dart';
 
 import 'app_content.dart';
 

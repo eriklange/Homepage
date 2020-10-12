@@ -5,7 +5,7 @@ import 'package:homepage/widgets/sectioned_view.dart';
 import 'package:homepage/widgets/section/section.dart';
 
 class Home extends SectionedView {
-  static String route = "/home";
+  static String route = "home";
 
   List<Section> get sections => [
         Welcome(),

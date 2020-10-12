@@ -5,6 +5,5 @@ class Links {
 
   static const String sopraSteria = "https://www.soprasteria.no";
 
-  static final Uri _params = Uri(scheme: 'mailto', path: 'tmp@langemann.no');
-  static final String email = _params.toString();
+  static final String email = "mailto:me@eriklange.no?subject=Hey!";
 }

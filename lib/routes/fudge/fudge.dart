@@ -10,7 +10,7 @@ import 'sections/gallery.dart';
 import 'sections/resources.dart';
 
 class Fudge extends SectionedView {
-  static const String route = "/fudge";
+  static const String route = "fudge";
 
   @override
   List<Section> get sections => [

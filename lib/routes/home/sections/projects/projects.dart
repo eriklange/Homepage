@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:homepage/routes/fudge/fudge.dart';
-import 'package:homepage/routes/home/sections/projects/old_timer.dart';
+import 'package:homepage/routes/old_timer.dart';
 import 'package:homepage/routes/home/sections/projects/project_tile.dart';
 import 'package:homepage/utils/asset_helper.dart';
 import 'package:homepage/widgets/section/section.dart';
