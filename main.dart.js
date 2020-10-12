@@ -45854,7 +45854,7 @@ $S:307}
 Z.tV.prototype={
 G:function(a,b){return T.lm(this.c,1)}}
 K.Bh.prototype={
-G:function(a,b){var s=null,r=K.aY(b).a1.y,q=L.km("Hi, I'm Erik!",s,s,s,s,s,s,s,K.aY(b).a1.a,s,s,s),p=r.Ak(C.kF),o=N.a2x(s)
+G:function(a,b){var s=null,r=K.aY(b).a1.y,q=L.km("Hi there, I'm Erik!",s,s,s,s,s,s,s,K.aY(b).a1.a,s,s,s),p=r.Ak(C.kF),o=N.a2x(s)
 o.aX=new K.Ss()
 return T.fb(H.c([new T.wH(C.o6,q,s),new T.dz(this.c,s,s),T.lm(new M.kX(s,new Q.eS("I'm a software developer from Oslo, Norway, currently studying towards a Master's degree in Informatics at the University of Oslo. Afterwards, I will begin working at ",H.c([new Q.eS("Sopra Steria",s,o,p),new Q.eS(".",s,s,r)],t.B2),s,r),s,s,s),1)],t.t),C.bV,C.a2)}}
 K.Ss.prototype={
