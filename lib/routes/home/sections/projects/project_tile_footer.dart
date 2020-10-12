@@ -26,18 +26,26 @@ class ProjectTileFooter extends StatelessWidget {
       );
 
   Widget _getFooterText(BuildContext context) {
+    final textPadding = EdgeInsets.all(5);
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          title,
-          style: Theme.of(context).textTheme.headline3,
+        Padding(
+          padding: textPadding, 
+          child: Text(
+            title,
+            style: Theme.of(context).textTheme.headline3,
+          ),
         ),
-        AutoSizeText(
-          summary,
-          style: Theme.of(context).textTheme.subtitle1,
-          maxLines: 2,
+        Padding(
+          padding: textPadding,
+          child: AutoSizeText(
+            summary,
+            style: Theme.of(context).textTheme.subtitle1,
+            maxLines: 2,
+          ),
         ),
       ],
     );

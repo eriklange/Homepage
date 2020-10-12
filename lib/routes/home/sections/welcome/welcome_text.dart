@@ -37,25 +37,28 @@ class WelcomeText extends StatelessWidget {
           padding: padding,
         ),
         Expanded(
-          child: AutoSizeText.rich(
-            TextSpan(
-              text: body,
-              style: bodyTheme,
-              children: [
-                TextSpan(
-                  text: sopraSteria,
-                  style: bodyTheme.copyWith(
-                    decoration: TextDecoration.underline,
+          child: Padding(
+            padding: EdgeInsets.all(5),
+            child: AutoSizeText.rich(
+              TextSpan(
+                text: body,
+                style: bodyTheme,
+                children: [
+                  TextSpan(
+                    text: sopraSteria,
+                    style: bodyTheme.copyWith(
+                      decoration: TextDecoration.underline,
+                    ),
+                    recognizer: TapGestureRecognizer()
+                      ..onTap = () => UrlHelper.launchUrl(Links.sopraSteria),
                   ),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () => UrlHelper.launchUrl(Links.sopraSteria),
-                ),
-                TextSpan(
-                  text: ".",
-                  style: bodyTheme,
-                ),
-              ],
-            ),
+                  TextSpan(
+                    text: ".",
+                    style: bodyTheme,
+                  ),
+                ],
+              ),
+          ),
           ),
         ),
       ],
