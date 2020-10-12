@@ -4,7 +4,6 @@ import 'package:homepage/routes/old_timer.dart';
 import 'package:homepage/routes/home/sections/projects/project_tile.dart';
 import 'package:homepage/utils/asset_helper.dart';
 import 'package:homepage/widgets/section/section.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 class Projects extends Section {
   Projects({Key key}) : super(title: "Projects", key: key);
@@ -30,13 +29,18 @@ class Projects extends Section {
     ];
   }
 
-  Widget _getContent(BuildContext context, bool smallScreen) {
-    final tiles = _getTiles(context, smallScreen);
+  Widget _getSizedContent(
+      BuildContext context, bool smallScreen, Widget child) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final ratio = smallScreen ? 0.6 : 0.45;
 
-    if (smallScreen) {
-      return Column(children: tiles);
-    }
+    return SizedBox(
+      width: screenWidth * ratio,
+      child: child,
+    );
+  }
 
+  Widget _getRow(List<Widget> tiles) {
     final expandedTiles = tiles
         .map(
           (e) => Expanded(
@@ -49,11 +53,20 @@ class Projects extends Section {
     return Row(children: expandedTiles);
   }
 
+  Widget _getContent(BuildContext context, bool smallScreen) {
+    final tiles = _getTiles(context, smallScreen);
+
+    final content = smallScreen ? Column(children: tiles) : _getRow(tiles);
+
+    return _getSizedContent(context, smallScreen, content);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return ScreenTypeLayout(
-      mobile: _getContent(context, true),
-      desktop: _getContent(context, false),
-    );
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    final smallScreen = screenWidth <= 1200;
+
+    return _getContent(context, smallScreen);
   }
 }

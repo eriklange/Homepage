@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:homepage/widgets/icon_row.dart';
+import 'package:homepage/widgets/icon_link_view.dart';
 import 'package:homepage/widgets/profile_picture.dart';
 import 'package:homepage/routes/home/sections/welcome/welcome_text.dart';
 import 'package:homepage/utils/constants.dart';
@@ -26,7 +26,7 @@ class Welcome extends Section {
               Padding(
                 padding: padding,
               ),
-              SocialIconRow(),
+              IconLinkView(),
             ],
           ),
         ),
