@@ -43,7 +43,7 @@ class AppTheme {
       );
 
   static ThemeData theme = ThemeData(
-    fontFamily: GoogleFonts.openSansCondensed().fontFamily,
+    fontFamily: GoogleFonts.raleway().fontFamily,
     visualDensity: VisualDensity.adaptivePlatformDensity,
     appBarTheme: AppBarTheme(
       color: MyColorScheme.colors[1],
