@@ -5,6 +5,8 @@ import 'package:homepage/widgets/my_color_scheme.dart';
 import 'package:homepage/widgets/section/section.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
+import 'navigation_bar_item.dart';
+
 class NavigationDrawer extends StatelessWidget {
   final List<Section> sections;
   final ItemScrollController itemScrollController;
@@ -23,7 +25,7 @@ class NavigationDrawer extends StatelessWidget {
         child: Center(
           child: Text(
             "Sections",
-            style: Theme.of(context).textTheme.headline1,
+            style: Theme.of(context).textTheme.headline4,
           ),
         ),
       ),
@@ -36,18 +38,26 @@ class NavigationDrawer extends StatelessWidget {
     for (var i = 0; i < sections.length; i++) {
       final section = sections[i];
 
-      final tile = Padding(
-        padding: EdgeInsets.only(top: 15),
-        child: ListTile(
-          title: Center(
-            child: Text(section.title),
-          ),
-          onTap: () {
-            Navigator.of(context).pop();
-            ScrollAssist.scrollTo(itemScrollController, i);
-          },
-        )
+      final tile = NavigationBarItem(
+        title: section.title,
+        padding: EdgeInsets.all(15),
+        onTap: () {
+          Navigator.of(context).pop();
+          ScrollAssist.scrollTo(itemScrollController, i);
+        },
       );
+
+      // final tile = Padding(
+      //     padding: EdgeInsets.only(top: 15),
+      //     child: ListTile(
+      //       title: Center(
+      //         child: Text(section.title),
+      //       ),
+      //       onTap: () {
+      //         Navigator.of(context).pop();
+      //         ScrollAssist.scrollTo(itemScrollController, i);
+      //       },
+      //     ));
 
       listTiles.add(tile);
     }
