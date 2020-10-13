@@ -10,7 +10,7 @@ Head over to [eriklange.no](eriklange.no) to view the finished product!
 
 ## File Structure
 
-All of the files that I've written is located in the `lib` folder, while the images & icons are located under `assets/images`.
+All of the files that I've written is located in the [lib](https://github.com/eriklange/Homepage/tree/master/lib) folder, while the images & icons are located under [assets/images](https://github.com/eriklange/Homepage/tree/master/assets/images).
 
 ## Flutter
 
