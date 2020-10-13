@@ -8,6 +8,10 @@ This is my new homepage! It conssists of
 
 Head over to [eriklange.no](eriklange.no) to view the finished product!
 
+## File Structure
+
+All of the files that I've written is located in the `lib` folder, while the images & icons are located under `assets/images`.
+
 ## Flutter
 
 This website is written in [Flutter](www.flutter.dev)
