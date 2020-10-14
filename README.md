@@ -6,7 +6,7 @@ This is my new homepage! It conssists of
 * My previous and ongoing projects
 * Experiences with regards to education and work
 
-Head over to [eriklange.no](eriklange.no) to view the finished product!
+Head over to [eriklange.no](www.eriklange.no) to view the finished product!
 
 ## File Structure
 
